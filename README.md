@@ -12,6 +12,7 @@ Hello Smart Hive touch README.mdtouch README.md
 ---------------------------------------------
 ## Google sheets  link 
      - https://docs.google.com/spreadsheets/d/1Czg5Qt0itfNzTUYA9ERubovFGEAN_pfBp5t0elW0NxY/edit?gid=0#gid=0
+   <img width="696" height="341" alt="image" src="https://github.com/user-attachments/assets/f36a64c8-056b-4736-8e7d-a9ba8e437e23" />
 
 ## More info 
      - https://github.com/StorageB/Google-Sheets-Logging?utm_source=chatgpt.com
