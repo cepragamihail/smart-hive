@@ -8,7 +8,7 @@
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
 #include "HTTPSRedirect.h"
-#include "DHT.h"
+// #include "DHT.h"
 
 // Enter network credentials:
 const char* ssid     = "WIFI12";
@@ -34,17 +34,17 @@ int value1 = 0;
 int value2 = 0;
 
 
-#define DHT_PIN 2
-#define DHT_TYPE DHT11
+// #define DHT_PIN 2
+// #define DHT_TYPE DHT11
 
-DHT dht(DHT_PIN, DHT_TYPE);
+// DHT dht(DHT_PIN, DHT_TYPE);
 
 void setup() {
 
   Serial.begin(9600);        
   delay(10);
   Serial.println('\n');
-  dht.begin();
+//   dht.begin();
   
   // Connect to WiFi
   WiFi.begin(ssid, password);             
@@ -94,8 +94,8 @@ void loop() {
 
   // create some fake data to publish
   value0 ++;
-  value1 = dht.readTemperature();
-  value2 = dht.readHumidity();
+//   value1 = dht.readTemperature();
+//   value2 = dht.readHumidity();
 
 
   static bool flag = false;
@@ -116,7 +116,7 @@ void loop() {
   }
   
   // Create json object string to send to Google Sheets
-  payload = payload_base + "\"" + value0 + "," + value1 + "," + value2 + "\"}";
+//   payload = payload_base + "\"" + value0 + "," + value1 + "," + value2 + "\"}";
   
   // Publish data to Google Sheets
   Serial.println("Publishing data...");
