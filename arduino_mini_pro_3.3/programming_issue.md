@@ -70,7 +70,7 @@ Dacă adaptorul tău are un header cu 6 pini, acesta se potrivește de obicei di
 După conectare, mergi la meniul **Tools** și selectează:
 
 * **Board**: Arduino Pro or Pro Mini.
-* **Processor**: ATmega328P (3.3V, 8 MHz) — **Atenție**: Dacă este setat pe 5V/16MHz, upload-ul va eșua din cauza vitezei de comunicare greșite.
+* **Processor**: ATmega328P (5V, 16 MHz)
 * **Port**: Selectează portul care apare nou la conectare (de obicei `/dev/ttyUSB0` pe Linux sau `COMx` pe Windows). 
 
 ---
