@@ -34,7 +34,7 @@ Adafruit_BMP280 bmp; // I2C
 //Adafruit_BMP280 bmp(BMP_CS, BMP_MOSI, BMP_MISO,  BMP_SCK);
 
 int minute(int a){
-  return a*1000;
+  return a*60000;
 }
 
 void setup() {
