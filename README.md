@@ -10,6 +10,56 @@ Hello Smart Hive touch README.mdtouch README.md
     - MQ153
     - ESP8266
 ---------------------------------------------
+# ESP32-C3 
+## Descriere
+* citește date de la senzori:
+  *  BME280 (temp, presiune)
+  *  DHT11 (umiditate)
+  *  MQ (gaz)
+* transmite date prin WiFi la fiecare **30 minute**
+* intră în **deep sleep** între transmisii
+---
+## Alimentare
+* 2× baterii Li-Ion 3.7V (ex: 18650) în **paralel**
+*  Tensiune: **3.7V**
+*  Capacitate totală: **≈ 6000 mAh**
+* Necesită:
+  * modul **BMS (protecție)**
+  * convertor **step-down la 3.3V**
+---
+## Consum estimativ
+###  Mod activ (~10 sec)
+* ESP32 + WiFi: ~120 mA
+* Senzori: ~3 mA
+* MQ: ~180 mA
+* Total: **~300 mA**
+Consum:
+300 mA × 10 s ≈ **0.83 mAh**
+---
+### Deep sleep (~30 min)
+* ESP32: ~0.02 mA
+* MQ:  ~180 mA (dacă rămâne pornit)
+Fără oprire MQ: **~24.8 mAh / ciclu**
+Cu MQ oprit: **~0.01 mAh / ciclu**
+---
+## Problemă
+Senzorul MQ consumă foarte mult și trebuie **oprit în deep sleep**.
+---
+Pentru a opri senzorul MQ putem folosi:
+* Folosește **MOSFET** pentru a opri MQ când ESP32 intră în sleep
+---
+## Autonomie estimată
+###Fără optimizare:
+* ~3 zile
+###Cu optimizare (MQ oprit):
+* ~5 luni
+---
+
+## Concluzie
+* ESP32-C3 este foarte eficient în deep sleep
+* WiFi consumă mult, dar pe termen scurt
+* Autonomia depinde de oprirea senzorului MQ
+  
 # Arduino UNO with W5100
 ## Problemă,Soluție
 - Conflict de pini,"Shield-ul Ethernet folosește pinii 10, 11, 12 și 13 pentru comunicarea SPI. Nu îi folosi pentru alte componente (senzori, LED-uri)."
