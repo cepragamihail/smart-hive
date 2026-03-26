@@ -49,10 +49,8 @@ Pentru a opri senzorul MQ putem folosi:
 * Folosește **MOSFET** pentru a opri MQ când ESP32 intră în sleep
 ---
 ## Autonomie estimată
-###Fără optimizare:
-* ~3 zile
-###Cu optimizare (MQ oprit):
-* ~5 luni
+###Fără optimizare: ~3 zile
+###Cu optimizare(MQ oprit): ~5 luni
 ---
 
 ## Concluzie
