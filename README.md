@@ -65,6 +65,9 @@ Pentru a opri senzorul MQ putem folosi:
 
 * Deep Sleep poate fi utilizat pentru aplicații de senzori cu consum redus de energie, sau scenarii de aplicație în care transmisia de date nu este necesară pentru majoritatea timpului. ESP32-C3 se poate trezi din modul de somn profund din când în când pentru a măsura și încărca date, după care revine în modul de somn profund. Alternativ, cipul poate să stocheze de asemenea date din mai multe măsurători în memoria RTC (memoria RTC poate păstra date chiar și în modul de somn profund) și să trimită datele odată.
 
+### Firebase
+* https://randomnerdtutorials.com/esp32-firebase-realtime-database/
+
 # Arduino UNO with W5100
 ## Problemă,Soluție
 - Conflict de pini,"Shield-ul Ethernet folosește pinii 10, 11, 12 și 13 pentru comunicarea SPI. Nu îi folosi pentru alte componente (senzori, LED-uri)."
