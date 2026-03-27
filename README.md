@@ -47,10 +47,12 @@ Senzorul MQ consumă foarte mult și trebuie **oprit în deep sleep**.
 ---
 Pentru a opri senzorul MQ putem folosi:
 * Folosește **MOSFET** pentru a opri MQ când ESP32 intră în sleep
+!!!MQ poate avea valori eronate la pornire dupa deep sleep, are nevoie de o perioada de 1-2 minute pentru incalzire!!
+Nu se pot garanta valori precise
 ---
 ## Autonomie estimată
-### Fără optimizare: ~3 zile
-### Cu optimizare(MQ oprit): ~5 luni
+* Fără optimizare: ~3 zile
+* Cu optimizare(MQ oprit): ~5 luni
 ---
 
 ## Concluzie
