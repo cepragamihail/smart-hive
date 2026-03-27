@@ -58,12 +58,11 @@ Pentru a opri senzorul MQ putem folosi:
 * WiFi consumă mult, dar pe termen scurt
 * Autonomia depinde de oprirea senzorului MQ
 
-### Deep Sleep
-* Comparativ cu modul de Deep Sleep, ESP32-C3 nu poate intra automat în modul de somn profund. În schimb, utilizatorii trebuie să apeleze funcția esp_deep_sleep_start() pentru a trimite cipul în modul de somn profund. În modul de somn profund, ESP32-C3 nu menține conexiunile Wi-Fi și Bluetooth LE și oprește CPU-ul, cea mai mare parte a RAM-ului și toate perifericele digitale care sunt sincronizate de APB_CLK. Totuși, controlerele de ceas RTC, perifericele RTC și memoria rapidă RTC pot funcționa în continuare. După trezirea din modul de somn profund, CPU-ul ESP32-C3 se va reseta și reporni.
+### Deep Sleep,resurese
+* https://github.com/junk495/Esp32C3_DeepSleep
+* https://espressif.github.io/esp32-c3-book-en/chapter_12/12.2/12.2.3.html
 
-* Deep Sleep poate fi utilizat pentru aplicații de senzori cu consum redus de energie, sau scenarii de aplicație în care transmisia de date nu este necesară pentru majoritatea timpului. ESP32-C3 se poate trezi din modul de somn profund din când în când pentru a măsura și încărca date, după care revine în modul de somn profund. Alternativ, cipul poate să stocheze de asemenea date din mai multe măsurători în memoria RTC (memoria RTC poate păstra date chiar și în modul de somn profund) și să trimită datele odată.
-
-### Firebase
+### Firebase,resurse
 * https://randomnerdtutorials.com/esp32-firebase-realtime-database/
 
 # Arduino UNO with W5100
