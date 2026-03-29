@@ -28,7 +28,7 @@ Hello Smart Hive touch README.mdtouch README.md
   * convertor **step-down la 3.3V**
 ---
 ## Consum estimativ
-###  Mod activ (~10 sec)
+###  Mod activ (~10 sec) !!Cu MQ pornit timpul de pornire 2-3 minute
 * ESP32 + WiFi: ~120 mA
 * Senzori: ~3 mA
 * MQ: ~180 mA
