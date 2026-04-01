@@ -8,14 +8,14 @@
 #include <DHT.h>
 
 // ---------------- WIFI ----------------
-#define WIFI_SSID "WIFI12"  //Nume wifi
-#define WIFI_PASSWORD "cracan12" //parola
+#define WIFI_SSID "-"  //Nume wifi
+#define WIFI_PASSWORD "-" //parola
 
 // ---------------- FIREBASE ----------------
-#define Web_API_KEY "AIzaSyDRhID37fRP5ne-YeG_z9C1dUVISqrvy3g"
-#define DATABASE_URL "https://esp32-c3-d8b7b-default-rtdb.europe-west1.firebasedatabase.app"
-#define USER_EMAIL "test@gmail.com"
-#define USER_PASS "12345678"
+#define Web_API_KEY "-"
+#define DATABASE_URL "-"
+#define USER_EMAIL "-"
+#define USER_PASS "-"
 
 // ---------------- DHT SENSOR ----------------
 #define DHTPIN 4       // Pinul DHT
