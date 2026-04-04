@@ -67,6 +67,9 @@ Pentru a opri senzorul MQ putem folosi:
 ### Firebase,resurse
 * https://randomnerdtutorials.com/esp32-firebase-realtime-database/
 
+### Librarie BMP280, resurse 
+* https://github.com/Erriez/ErriezBMX280/tree/master?tab=readme-ov-file
+
 # Arduino UNO with W5100
 ## Problemă,Soluție
 - Conflict de pini,"Shield-ul Ethernet folosește pinii 10, 11, 12 și 13 pentru comunicarea SPI. Nu îi folosi pentru alte componente (senzori, LED-uri)."
