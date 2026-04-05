@@ -70,46 +70,6 @@ Pentru a opri senzorul MQ putem folosi:
 ### Librarie BMP280, resurse 
 * https://github.com/Erriez/ErriezBMX280/tree/master?tab=readme-ov-file
 
-# Montaj Panou Solar
-* 1. Captarea (Panoul Solar)
-Un panou solar monocristalin de 6V cu o putere de minim 5W.
-
-2. Conversia Inteligentă
-
-Putem folosi TP4056,dar vor fi pierderi de energie o optiune mai buna MPPT
-
-Ce ai nevoie exact: Un modul de încărcare CN3791. Atenție maximă când îl comanzi: trebuie să alegi versiunea calibrată fix pentru tensiunea panoului tău (adică versiunea de 6V).
-
-Ce face: Funcționează în comutație (MPPT). Stoarce matematic puterea maximă din panou, indiferent de cât de slab este soarele, și o bagă în baterie cu eficiență de 90%.
-
-Stocarea (Acumulatorul)
-
-Un suport de baterie 18650 cu fire groase.
-
-Distribuția (Regulatoarele de tensiune)
-
-Bateria va avea o tensiune variabilă între 3.0V (goală) și 4.2V (plină). Niciuna dintre componentele tale nu folosește această plajă.
-Trebuie să creezi două magistrale de alimentare separate.
-Magistrala Logicii (pentru ESP32-C3 și senzori): * Acestea merg strict la 3.3V. Dacă le dai 4.2V din bateria plină, le arzi.
-
-Ce ai nevoie: Un modul regulator LDO (Low Dropout) de 3.3V, capabil de minim 500mA. Exemple: modul cu cip HT7333, AP2112K sau XC6220. Consumă extrem de puțin în repaus.
-
-Magistrala de Putere (pentru modulul celular SIM7000G):
-
-Modulul celular are nevoie de o tensiune stabilă în jur de 3.8V - 4.0V (verifică datasheet-ul exact al plăcii pe care o cumperi) și trage vârfuri de 2A.
-
-Ce ai nevoie: Un modul DC-DC Step-Down (dacă GSM-ul cere 3.8V) capabil de 2A reali. Ieșirea acestuia merge doar la modulul GSM.
-
-Obligatoriu: Un condensator electrolitic de 2200µF / 10V. Se lipește fizic direct pe pinii de alimentare ai modulului GSM pentru a acționa ca un rezervor de șoc în secunda în care antena emite.
-
-Schema logică de conexiune a acestor piese:
-
-[Panou Solar] ---> [CN3791] ---> [Baterie 18650]
-De la pinii bateriei (sau de la ieșirea de sarcină a CN3791, dacă are), tragi fire în două direcții paralele:
-Ruta 1 ---> [Regulator LDO 3.3V] ---> [Alimentare ESP32 și Senzori]
-Ruta 2 ---> [Regulator DC-DC] ---> [Alimentare Modul GSM + Condensator]
-
-
 # Arduino UNO with W5100
 ## Problemă,Soluție
 - Conflict de pini,"Shield-ul Ethernet folosește pinii 10, 11, 12 și 13 pentru comunicarea SPI. Nu îi folosi pentru alte componente (senzori, LED-uri)."
