@@ -20,9 +20,14 @@ Pranav Cherukupalli <cherukupallip@gmail.com>
 */
 
 #include <Arduino.h>
+#include <WiFi.h>
 
 #define uS_TO_S_FACTOR 1000000ULL /* Conversion factor for micro seconds to seconds */
-#define TIME_TO_SLEEP  5          /* Time ESP32 will go to sleep (in seconds) */
+#define TIME_TO_SLEEP  10          /* Time ESP32 will go to sleep (in seconds) */
+
+// WiFi credentials
+const char* ssid = "Galaxy Z Flip6 5DBF";
+const char* password = "kugbdercpe2fb7h";
 
 RTC_DATA_ATTR int bootCount = 0;
 
@@ -56,6 +61,31 @@ void setup() {
   //Print the wakeup reason for ESP32
   print_wakeup_reason();
 
+  // Connect to WiFi
+  Serial.print("Connecting to WiFi: ");
+  Serial.println(ssid);
+  WiFi.begin(ssid, password);
+
+  int attempts = 0;
+  // Try to connect for up to 20 seconds
+  while (WiFi.status() != WL_CONNECTED && attempts < 20) {
+    delay(1000);
+    Serial.print(".");
+    attempts++;
+  }
+
+  if (WiFi.status() == WL_CONNECTED) {
+    Serial.println("\nWiFi connected successfully!");
+    Serial.print("IP Address: ");
+    Serial.println(WiFi.localIP());
+  } else {
+    Serial.println("\nFailed to connect to WiFi within timeout.");
+  }
+
+  // Stay awake/active for 5 seconds as requested
+  Serial.println("Staying awake for 5 seconds...");
+  delay(5000);
+
   /*
   First we configure the wake up source
   We set our ESP32 to wake up every 5 seconds
@@ -85,6 +115,11 @@ void setup() {
   */
   Serial.println("Going to sleep now");
   Serial.flush();
+
+  // Turn off WiFi to save power before entering deep sleep
+  WiFi.disconnect(true);
+  WiFi.mode(WIFI_OFF);
+
   esp_deep_sleep_start();
   Serial.println("This will never be printed");
 }
