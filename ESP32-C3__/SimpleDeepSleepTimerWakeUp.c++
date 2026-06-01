@@ -25,9 +25,8 @@ Pranav Cherukupalli <cherukupallip@gmail.com>
 #define uS_TO_S_FACTOR 1000000ULL /* Conversion factor for micro seconds to seconds */
 #define TIME_TO_SLEEP  10          /* Time ESP32 will go to sleep (in seconds) */
 
-// WiFi credentials
-const char* ssid = "Galaxy Z Flip6 5DBF";
-const char* password = "kugbdercpe2fb7h";
+// WiFi credentials imported from secrets.h
+#include "secrets.h"
 
 RTC_DATA_ATTR int bootCount = 0;
 
