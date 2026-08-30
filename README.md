@@ -1,15 +1,9 @@
-Hello Smart Hive touch README.mdtouch README.md
-# Arduino UNO
-## script
-    - DHT11
-    - MQ153
-    - ESP8266
-# Arduino mini pro 3.3v
-## script
-    - DHT11
-    - MQ153
-    - ESP8266
----------------------------------------------
+# Environmental & Air Quality Monitoring System
+
+Un sistem versatil și eficient pentru monitorizarea parametrilor de mediu și a calității aerului. Proiectul include mai multe opțiuni de arhitectură hardware, de la o **stație IoT portabilă Ultra-Low-Power** bazată pe **ESP32-C3** .
+
+---
+
 # ESP32-C3 
 ## Descriere
 * citește date de la senzori:
