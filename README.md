@@ -105,5 +105,11 @@ Notă importantă: Senzorii din seria MQ au nevoie de o perioadă de "încălzir
 
 Calibrare: Pragurile de mai sus sunt orientative. Fiecare senzor MQ-135 diferă puțin. Poți ajusta valorile din cod după ce vezi ce cifre raportează senzorul tău într-un mediu cu aer curat.
 
-# Arduino UNO with ESP8266
+### 4. ESP32-C3 / Arduino + Modul LoRa (Comunicație Radio Long-Range)
+Soluție ideală pentru monitorizare în zone izolate (câmp, pădure, seră) unde **nu există acoperire WiFi sau rețea Ethernet**.
+
+* **Tehnologie:** Transmisie prin unde radio pe frecvențe libere (868 MHz / 915 MHz).
+* **Rază de acțiune:** De la câțiva kilometri în mediu urban, până la 10–15 km în linie dreaptă (câmp deschis).
+* **Eficiență:** Consum de energie extrem de redus în timpul emisiei radio comparativ cu WiFi, maximizând autonomia bateriei.
+* **Topologie:** Datele trimise prin unde radio pot fi recepționate de o altă placă (LoRa Receiver / Gateway) care le poate redirecționa mai departe în Cloud.
 
