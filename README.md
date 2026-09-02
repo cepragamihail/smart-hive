@@ -5,6 +5,8 @@
 ---
 
 ## ESP32-C3 
+*Forum detali placa esp32-c3 si problemele de conectare wifi
+* https://github.com/luc-github/ESP3D/issues/1009#issue-2174053082
 ### Descriere
 * citește date de la senzori:
   *  BME280 (temp, presiune)
